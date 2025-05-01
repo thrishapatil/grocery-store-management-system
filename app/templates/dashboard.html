@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Dashboard</title></head>
+<body>
+<h2>Dashboard</h2>
+<a href="{{ url_for('logout') }}">Logout</a>
+<h3>Add Product</h3>
+<form method="post" action="{{ url_for('add_product') }}">
+    Name: <input type="text" name="name"><br>
+    Price: <input type="number" name="price" step="0.01"><br>
+    Quantity: <input type="number" name="quantity"><br>
+    <button type="submit">Add Product</button>
+</form>
+<h3>Products</h3>
+{% for product in products %}
+    <p>{{ product.name }} - ${{ product.price }} - Qty: {{ product.quantity }}</p>
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head><title>Grocery Store</title></head>
+<body>
+<h1>Grocery Products</h1>
+{% for product in products %}
+    <p>{{ product.name }} - ${{ product.price }} ({{ product.quantity }} available)</p>
+{% endfor %}
+<a href="{{ url_for('login') }}">Login</a>
+</body>
+</html>
