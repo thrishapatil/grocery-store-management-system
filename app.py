@@ -48,7 +48,10 @@ def admin():
 def shop():
     if request.method=='POST':
         # item_quantity=request.form[]
-        print(request.form['quantity {{item.name}}'])
+        a = request.form['quantityapple']
+        print(f"apple quantity is {a}")
+        g = request.form['quantitygrape']
+        print(f"grape quantity is {g}")
     
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
